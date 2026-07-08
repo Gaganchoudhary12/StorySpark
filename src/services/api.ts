@@ -1,7 +1,7 @@
 import { API_BASE_URL } from '@env';
 import axios, { AxiosError } from 'axios';
 
-const baseURL = API_BASE_URL || 'http://10.0.2.2:5000';
+const baseURL = __DEV__ ? 'http://localhost:5000' : API_BASE_URL || 'http://10.0.2.2:5000';
 console.log('[API] Initializing with baseURL:', baseURL);
 
 const api = axios.create({
