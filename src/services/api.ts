@@ -13,6 +13,7 @@ export interface StoryOptionsResponse {
   moods: string[];
   relationships: string[];
   themes: string[];
+  languages: string[];
 }
 
 // Add request interceptor
@@ -67,7 +68,7 @@ export const storyService = {
       throw new Error('Something went wrong while loading story options.');
     }
   },
-  generateStory: async (payload: { mood: string; relationship: string; theme: string }) => {
+  generateStory: async (payload: { mood: string; relationship: string; theme: string; language: string }) => {
     try {
       console.log('[StoryService] Generating story with payload:', payload);
       const response = await api.post('/api/story', payload);

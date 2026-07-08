@@ -34,7 +34,7 @@ const StoryScreen = ({ route, navigation }: Props) => {
         ))}
       </View>
 
-      <Button title="Generate Another Story" onPress={() => navigation.navigate('Question', { step: 'mood' })} />
+      <Button title="Generate Another Story" onPress={() => navigation.navigate('Question', { step: 'mood', mood: 'Romantic', relationship: 'Dating', theme: 'Royal Kingdom', language: 'English' })} />
     </ScreenContainer>
   );
 };

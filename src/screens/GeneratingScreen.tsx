@@ -19,7 +19,7 @@ const messages = [
 ];
 
 const GeneratingScreen = ({ route, navigation }: Props) => {
-  const { mood, relationship, theme: selectedTheme } = route.params;
+  const { mood, relationship, theme: selectedTheme, language } = route.params;
   const mutation = useStoryMutation();
   const hasStartedRef = useRef(false);
 
@@ -32,11 +32,12 @@ const GeneratingScreen = ({ route, navigation }: Props) => {
     console.log('[GeneratingScreen] Starting story generation with:', {
       mood,
       relationship,
-      theme: selectedTheme
+      theme: selectedTheme,
+      language
     });
 
     mutation.mutate(
-      { mood, relationship, theme: selectedTheme },
+      { mood, relationship, theme: selectedTheme, language },
       {
         onSuccess: (data) => {
           console.log('[GeneratingScreen] Story generated successfully:', data);
@@ -47,7 +48,7 @@ const GeneratingScreen = ({ route, navigation }: Props) => {
         }
       }
     );
-  }, [mood, mutation, navigation, relationship, selectedTheme]);
+  }, [language, mood, mutation, navigation, relationship, selectedTheme]);
 
   console.log('[GeneratingScreen] Render - mutation state:', {
     status: mutation.status,
@@ -68,7 +69,7 @@ const GeneratingScreen = ({ route, navigation }: Props) => {
             <Button title="Retry" onPress={() => {
               console.log('[GeneratingScreen] Retrying story generation');
               mutation.mutate(
-                { mood, relationship, theme: selectedTheme },
+                { mood, relationship, theme: selectedTheme, language },
                 {
                   onSuccess: (data) => {
                     console.log('[GeneratingScreen] Story generated successfully:', data);

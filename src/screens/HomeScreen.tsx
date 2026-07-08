@@ -14,7 +14,7 @@ const HomeScreen = ({ navigation }: Props) => {
       <View style={styles.centered}>
         <Text style={styles.logo}>❤️ RolePlay</Text>
         <Text style={styles.subtitle}>Create a personalized roleplay story in under 30 seconds.</Text>
-        <Button title="Start" onPress={() => navigation.navigate('Question', { step: 'mood' })} />
+        <Button title="Start" onPress={() => navigation.navigate('Question', { step: 'mood', mood: 'Romantic', relationship: 'Dating', theme: 'Royal Kingdom', language: 'English' })} />
       </View>
     </ScreenContainer>
   );

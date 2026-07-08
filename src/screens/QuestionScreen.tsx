@@ -13,11 +13,14 @@ import { RootStackParamList } from '../types/navigation';
 type Props = StackScreenProps<RootStackParamList, 'Question'>;
 
 const QuestionScreen = ({ route, navigation }: Props) => {
-  const { step } = route.params;
+  const {
+    step,
+    mood = 'Romantic',
+    relationship = 'Dating',
+    theme: selectedTheme = 'Royal Kingdom',
+    language = 'English'
+  } = route.params;
   const [selection, setSelection] = useState('');
-  const [mood, setMood] = useState('Romantic');
-  const [relationship, setRelationship] = useState('Dating');
-  const [selectedTheme, setSelectedTheme] = useState('Royal Kingdom');
   const optionsQuery = useQuery({
     queryKey: ['story-options'],
     queryFn: storyService.getStoryOptions
@@ -26,6 +29,7 @@ const QuestionScreen = ({ route, navigation }: Props) => {
   const title = useMemo(() => {
     if (step === 'relationship') return "Relationship";
     if (step === 'theme') return 'Choose a Theme';
+    if (step === 'language') return 'Choose a Language';
     return "What's your mood?";
   }, [step]);
 
@@ -34,26 +38,48 @@ const QuestionScreen = ({ route, navigation }: Props) => {
     if (!data) return [];
     if (step === 'relationship') return data.relationships;
     if (step === 'theme') return data.themes;
+    if (step === 'language') return data.languages ?? ['English', 'Hindi'];
     return data.moods;
   }, [optionsQuery.data, step]);
 
+  const currentValue = useMemo(() => {
+    if (step === 'relationship') return relationship;
+    if (step === 'theme') return selectedTheme;
+    if (step === 'language') return language;
+    return mood;
+  }, [language, mood, relationship, selectedTheme, step]);
+
   const handleContinue = () => {
     if (step === 'mood') {
-      navigation.navigate('Question', { step: 'relationship' });
+      navigation.navigate('Question', { step: 'relationship', mood, relationship, theme: selectedTheme, language });
       return;
     }
     if (step === 'relationship') {
-      navigation.navigate('Question', { step: 'theme' });
+      navigation.navigate('Question', { step: 'theme', mood, relationship, theme: selectedTheme, language });
       return;
     }
-    navigation.navigate('Generating', { mood, relationship, theme: selectedTheme });
+    if (step === 'theme') {
+      navigation.navigate('Question', { step: 'language', mood, relationship, theme: selectedTheme, language });
+      return;
+    }
+
+    navigation.navigate('Generating', { mood, relationship, theme: selectedTheme, language });
   };
 
   const handleSelect = (item: string) => {
     setSelection(item);
-    if (step === 'mood') setMood(item);
-    if (step === 'relationship') setRelationship(item);
-    if (step === 'theme') setSelectedTheme(item);
+    if (step === 'mood') {
+      navigation.setParams({ mood: item });
+    }
+    if (step === 'relationship') {
+      navigation.setParams({ relationship: item });
+    }
+    if (step === 'theme') {
+      navigation.setParams({ theme: item });
+    }
+    if (step === 'language') {
+      navigation.setParams({ language: item });
+    }
   };
 
   if (optionsQuery.isLoading) {
@@ -79,16 +105,23 @@ const QuestionScreen = ({ route, navigation }: Props) => {
       </ScreenContainer>
     );
   }
-
   return (
     <ScreenContainer>
       <SectionTitle title={title} />
       <View style={styles.optionList}>
-        {options.map((item) => (
-          <OptionCard key={item} label={item} selected={selection === item || (step === 'mood' && mood === item) || (step === 'relationship' && relationship === item) || (step === 'theme' && selectedTheme === item)} onPress={() => handleSelect(item)} />
+        {options?.map((item) => (
+          <OptionCard
+            key={item}
+            label={item}
+            selected={
+              selection === item ||
+              currentValue === item
+            }
+            onPress={() => handleSelect(item)}
+          />
         ))}
       </View>
-      <Button title="Continue" onPress={handleContinue} disabled={!selection && step === 'mood' ? false : !selection} />
+      <Button title="Continue" onPress={handleContinue} disabled={!selection && !currentValue} />
     </ScreenContainer>
   );
 };

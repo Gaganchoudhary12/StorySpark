@@ -1,7 +1,13 @@
 export type RootStackParamList = {
   Home: undefined;
-  Question: { step: 'mood' | 'relationship' | 'theme' };
-  Generating: { mood: string; relationship: string; theme: string };
+  Question: {
+    step: 'mood' | 'relationship' | 'theme' | 'language';
+    mood?: string;
+    relationship?: string;
+    theme?: string;
+    language?: string;
+  };
+  Generating: { mood: string; relationship: string; theme: string; language: string };
   Story: { story: StoryResponse };
 };
 
