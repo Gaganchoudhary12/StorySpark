@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "/Users/tul/Desktop/Gagan git /storeSpark/StorySpark/android/app/build/intermediates/cxx/Debug/6z5fk4p5/obj/x86_64/libappmodules.so"
+			"path" : "/Users/tul/Desktop/Gagan git /storeSpark/StorySpark/android/app/build/intermediates/cxx/RelWithDebInfo/354j334h/obj/x86_64/libappmodules.so"
 		}
 	],
 	"backtrace" : 3,
@@ -109,7 +109,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "-g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D__BIONIC_NO_PAGE_SIZE_MACRO -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -fno-limit-debug-info  -fPIC"
+					"fragment" : "-g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D__BIONIC_NO_PAGE_SIZE_MACRO -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O2 -g -DNDEBUG -fPIC"
 				},
 				{
 					"backtrace" : 7,
@@ -276,12 +276,12 @@
 				{
 					"backtrace" : 5,
 					"isSystem" : true,
-					"path" : "/Users/tul/.gradle/caches/9.3.1/transforms/2b7c23aa4547eb79508e5d3aa3f2bc7a/transformed/react-android-0.86.0-debug/prefab/modules/jsi/include"
+					"path" : "/Users/tul/.gradle/caches/9.3.1/transforms/2454197a7a7bdd22c9814cde61f3ed7f/transformed/react-android-0.86.0-release/prefab/modules/jsi/include"
 				},
 				{
 					"backtrace" : 5,
 					"isSystem" : true,
-					"path" : "/Users/tul/.gradle/caches/9.3.1/transforms/2b7c23aa4547eb79508e5d3aa3f2bc7a/transformed/react-android-0.86.0-debug/prefab/modules/reactnative/include"
+					"path" : "/Users/tul/.gradle/caches/9.3.1/transforms/2454197a7a7bdd22c9814cde61f3ed7f/transformed/react-android-0.86.0-release/prefab/modules/reactnative/include"
 				}
 			],
 			"language" : "CXX",
@@ -298,10 +298,6 @@
 	],
 	"dependencies" : 
 	[
-		{
-			"backtrace" : 4,
-			"id" : "react_codegen_RNVectorIconsSpec::@479809fae146501fd34d"
-		},
 		{
 			"backtrace" : 4,
 			"id" : "react_codegen_rnasyncstorage::@1596841e19ec5b9eeffe"
@@ -325,6 +321,10 @@
 		{
 			"backtrace" : 4,
 			"id" : "react_codegen_rnscreens::@25bcbd507e98d3a854ad"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "react_codegen_RNVectorIconsSpec::@479809fae146501fd34d"
 		}
 	],
 	"id" : "appmodules::@6890427a1f51a3e7e1df",
@@ -333,22 +333,22 @@
 		"commandFragments" : 
 		[
 			{
-				"fragment" : "-Wl,-z,max-page-size=16384 -Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,--no-undefined-version -Wl,--fatal-warnings -Wl,--no-undefined -Qunused-arguments",
+				"fragment" : "-Wl,-z,max-page-size=16384 -Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,--no-undefined-version -Wl,--fatal-warnings -Wl,--no-undefined -Qunused-arguments  -Wl,--gc-sections",
 				"role" : "flags"
 			},
 			{
 				"backtrace" : 4,
-				"fragment" : "\"/Users/tul/Desktop/Gagan git /storeSpark/StorySpark/android/app/build/intermediates/cxx/Debug/6z5fk4p5/obj/x86_64/libreact_codegen_rngesturehandler_codegen.so\"",
+				"fragment" : "\"/Users/tul/Desktop/Gagan git /storeSpark/StorySpark/android/app/build/intermediates/cxx/RelWithDebInfo/354j334h/obj/x86_64/libreact_codegen_rngesturehandler_codegen.so\"",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 4,
-				"fragment" : "\"/Users/tul/Desktop/Gagan git /storeSpark/StorySpark/android/app/build/intermediates/cxx/Debug/6z5fk4p5/obj/x86_64/libreact_codegen_safeareacontext.so\"",
+				"fragment" : "\"/Users/tul/Desktop/Gagan git /storeSpark/StorySpark/android/app/build/intermediates/cxx/RelWithDebInfo/354j334h/obj/x86_64/libreact_codegen_safeareacontext.so\"",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 4,
-				"fragment" : "\"/Users/tul/Desktop/Gagan git /storeSpark/StorySpark/android/app/build/intermediates/cxx/Debug/6z5fk4p5/obj/x86_64/libreact_codegen_rnscreens.so\"",
+				"fragment" : "\"/Users/tul/Desktop/Gagan git /storeSpark/StorySpark/android/app/build/intermediates/cxx/RelWithDebInfo/354j334h/obj/x86_64/libreact_codegen_rnscreens.so\"",
 				"role" : "libraries"
 			},
 			{
@@ -358,12 +358,12 @@
 			},
 			{
 				"backtrace" : 5,
-				"fragment" : "/Users/tul/.gradle/caches/9.3.1/transforms/2b7c23aa4547eb79508e5d3aa3f2bc7a/transformed/react-android-0.86.0-debug/prefab/modules/jsi/libs/android.x86_64/libjsi.so",
+				"fragment" : "/Users/tul/.gradle/caches/9.3.1/transforms/2454197a7a7bdd22c9814cde61f3ed7f/transformed/react-android-0.86.0-release/prefab/modules/jsi/libs/android.x86_64/libjsi.so",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 5,
-				"fragment" : "/Users/tul/.gradle/caches/9.3.1/transforms/2b7c23aa4547eb79508e5d3aa3f2bc7a/transformed/react-android-0.86.0-debug/prefab/modules/reactnative/libs/android.x86_64/libreactnative.so",
+				"fragment" : "/Users/tul/.gradle/caches/9.3.1/transforms/2454197a7a7bdd22c9814cde61f3ed7f/transformed/react-android-0.86.0-release/prefab/modules/reactnative/libs/android.x86_64/libreactnative.so",
 				"role" : "libraries"
 			},
 			{
@@ -442,145 +442,145 @@
 		{
 			"backtrace" : 4,
 			"isGenerated" : true,
-			"path" : "/Users/tul/Desktop/Gagan git /storeSpark/StorySpark/android/app/.cxx/Debug/6z5fk4p5/x86_64/rnasyncstorage_autolinked_build/CMakeFiles/react_codegen_rnasyncstorage.dir/react/renderer/components/rnasyncstorage/ComponentDescriptors.cpp.o",
+			"path" : "/Users/tul/Desktop/Gagan git /storeSpark/StorySpark/android/app/.cxx/RelWithDebInfo/354j334h/x86_64/rnasyncstorage_autolinked_build/CMakeFiles/react_codegen_rnasyncstorage.dir/react/renderer/components/rnasyncstorage/ComponentDescriptors.cpp.o",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 4,
 			"isGenerated" : true,
-			"path" : "/Users/tul/Desktop/Gagan git /storeSpark/StorySpark/android/app/.cxx/Debug/6z5fk4p5/x86_64/rnasyncstorage_autolinked_build/CMakeFiles/react_codegen_rnasyncstorage.dir/react/renderer/components/rnasyncstorage/EventEmitters.cpp.o",
+			"path" : "/Users/tul/Desktop/Gagan git /storeSpark/StorySpark/android/app/.cxx/RelWithDebInfo/354j334h/x86_64/rnasyncstorage_autolinked_build/CMakeFiles/react_codegen_rnasyncstorage.dir/react/renderer/components/rnasyncstorage/EventEmitters.cpp.o",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 4,
 			"isGenerated" : true,
-			"path" : "/Users/tul/Desktop/Gagan git /storeSpark/StorySpark/android/app/.cxx/Debug/6z5fk4p5/x86_64/rnasyncstorage_autolinked_build/CMakeFiles/react_codegen_rnasyncstorage.dir/react/renderer/components/rnasyncstorage/Props.cpp.o",
+			"path" : "/Users/tul/Desktop/Gagan git /storeSpark/StorySpark/android/app/.cxx/RelWithDebInfo/354j334h/x86_64/rnasyncstorage_autolinked_build/CMakeFiles/react_codegen_rnasyncstorage.dir/react/renderer/components/rnasyncstorage/Props.cpp.o",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 4,
 			"isGenerated" : true,
-			"path" : "/Users/tul/Desktop/Gagan git /storeSpark/StorySpark/android/app/.cxx/Debug/6z5fk4p5/x86_64/rnasyncstorage_autolinked_build/CMakeFiles/react_codegen_rnasyncstorage.dir/react/renderer/components/rnasyncstorage/ShadowNodes.cpp.o",
+			"path" : "/Users/tul/Desktop/Gagan git /storeSpark/StorySpark/android/app/.cxx/RelWithDebInfo/354j334h/x86_64/rnasyncstorage_autolinked_build/CMakeFiles/react_codegen_rnasyncstorage.dir/react/renderer/components/rnasyncstorage/ShadowNodes.cpp.o",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 4,
 			"isGenerated" : true,
-			"path" : "/Users/tul/Desktop/Gagan git /storeSpark/StorySpark/android/app/.cxx/Debug/6z5fk4p5/x86_64/rnasyncstorage_autolinked_build/CMakeFiles/react_codegen_rnasyncstorage.dir/react/renderer/components/rnasyncstorage/States.cpp.o",
+			"path" : "/Users/tul/Desktop/Gagan git /storeSpark/StorySpark/android/app/.cxx/RelWithDebInfo/354j334h/x86_64/rnasyncstorage_autolinked_build/CMakeFiles/react_codegen_rnasyncstorage.dir/react/renderer/components/rnasyncstorage/States.cpp.o",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 4,
 			"isGenerated" : true,
-			"path" : "/Users/tul/Desktop/Gagan git /storeSpark/StorySpark/android/app/.cxx/Debug/6z5fk4p5/x86_64/rnasyncstorage_autolinked_build/CMakeFiles/react_codegen_rnasyncstorage.dir/rnasyncstorage-generated.cpp.o",
+			"path" : "/Users/tul/Desktop/Gagan git /storeSpark/StorySpark/android/app/.cxx/RelWithDebInfo/354j334h/x86_64/rnasyncstorage_autolinked_build/CMakeFiles/react_codegen_rnasyncstorage.dir/rnasyncstorage-generated.cpp.o",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 4,
 			"isGenerated" : true,
-			"path" : "/Users/tul/Desktop/Gagan git /storeSpark/StorySpark/android/app/.cxx/Debug/6z5fk4p5/x86_64/rnreanimated_autolinked_build/CMakeFiles/react_codegen_rnreanimated.dir/react/renderer/components/rnreanimated/ComponentDescriptors.cpp.o",
+			"path" : "/Users/tul/Desktop/Gagan git /storeSpark/StorySpark/android/app/.cxx/RelWithDebInfo/354j334h/x86_64/rnreanimated_autolinked_build/CMakeFiles/react_codegen_rnreanimated.dir/react/renderer/components/rnreanimated/ComponentDescriptors.cpp.o",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 4,
 			"isGenerated" : true,
-			"path" : "/Users/tul/Desktop/Gagan git /storeSpark/StorySpark/android/app/.cxx/Debug/6z5fk4p5/x86_64/rnreanimated_autolinked_build/CMakeFiles/react_codegen_rnreanimated.dir/react/renderer/components/rnreanimated/EventEmitters.cpp.o",
+			"path" : "/Users/tul/Desktop/Gagan git /storeSpark/StorySpark/android/app/.cxx/RelWithDebInfo/354j334h/x86_64/rnreanimated_autolinked_build/CMakeFiles/react_codegen_rnreanimated.dir/react/renderer/components/rnreanimated/EventEmitters.cpp.o",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 4,
 			"isGenerated" : true,
-			"path" : "/Users/tul/Desktop/Gagan git /storeSpark/StorySpark/android/app/.cxx/Debug/6z5fk4p5/x86_64/rnreanimated_autolinked_build/CMakeFiles/react_codegen_rnreanimated.dir/react/renderer/components/rnreanimated/Props.cpp.o",
+			"path" : "/Users/tul/Desktop/Gagan git /storeSpark/StorySpark/android/app/.cxx/RelWithDebInfo/354j334h/x86_64/rnreanimated_autolinked_build/CMakeFiles/react_codegen_rnreanimated.dir/react/renderer/components/rnreanimated/Props.cpp.o",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 4,
 			"isGenerated" : true,
-			"path" : "/Users/tul/Desktop/Gagan git /storeSpark/StorySpark/android/app/.cxx/Debug/6z5fk4p5/x86_64/rnreanimated_autolinked_build/CMakeFiles/react_codegen_rnreanimated.dir/react/renderer/components/rnreanimated/ShadowNodes.cpp.o",
+			"path" : "/Users/tul/Desktop/Gagan git /storeSpark/StorySpark/android/app/.cxx/RelWithDebInfo/354j334h/x86_64/rnreanimated_autolinked_build/CMakeFiles/react_codegen_rnreanimated.dir/react/renderer/components/rnreanimated/ShadowNodes.cpp.o",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 4,
 			"isGenerated" : true,
-			"path" : "/Users/tul/Desktop/Gagan git /storeSpark/StorySpark/android/app/.cxx/Debug/6z5fk4p5/x86_64/rnreanimated_autolinked_build/CMakeFiles/react_codegen_rnreanimated.dir/react/renderer/components/rnreanimated/States.cpp.o",
+			"path" : "/Users/tul/Desktop/Gagan git /storeSpark/StorySpark/android/app/.cxx/RelWithDebInfo/354j334h/x86_64/rnreanimated_autolinked_build/CMakeFiles/react_codegen_rnreanimated.dir/react/renderer/components/rnreanimated/States.cpp.o",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 4,
 			"isGenerated" : true,
-			"path" : "/Users/tul/Desktop/Gagan git /storeSpark/StorySpark/android/app/.cxx/Debug/6z5fk4p5/x86_64/rnreanimated_autolinked_build/CMakeFiles/react_codegen_rnreanimated.dir/rnreanimated-generated.cpp.o",
+			"path" : "/Users/tul/Desktop/Gagan git /storeSpark/StorySpark/android/app/.cxx/RelWithDebInfo/354j334h/x86_64/rnreanimated_autolinked_build/CMakeFiles/react_codegen_rnreanimated.dir/rnreanimated-generated.cpp.o",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 4,
 			"isGenerated" : true,
-			"path" : "/Users/tul/Desktop/Gagan git /storeSpark/StorySpark/android/app/.cxx/Debug/6z5fk4p5/x86_64/rnworklets_autolinked_build/CMakeFiles/react_codegen_rnworklets.dir/react/renderer/components/rnworklets/ComponentDescriptors.cpp.o",
+			"path" : "/Users/tul/Desktop/Gagan git /storeSpark/StorySpark/android/app/.cxx/RelWithDebInfo/354j334h/x86_64/rnworklets_autolinked_build/CMakeFiles/react_codegen_rnworklets.dir/react/renderer/components/rnworklets/ComponentDescriptors.cpp.o",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 4,
 			"isGenerated" : true,
-			"path" : "/Users/tul/Desktop/Gagan git /storeSpark/StorySpark/android/app/.cxx/Debug/6z5fk4p5/x86_64/rnworklets_autolinked_build/CMakeFiles/react_codegen_rnworklets.dir/react/renderer/components/rnworklets/EventEmitters.cpp.o",
+			"path" : "/Users/tul/Desktop/Gagan git /storeSpark/StorySpark/android/app/.cxx/RelWithDebInfo/354j334h/x86_64/rnworklets_autolinked_build/CMakeFiles/react_codegen_rnworklets.dir/react/renderer/components/rnworklets/EventEmitters.cpp.o",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 4,
 			"isGenerated" : true,
-			"path" : "/Users/tul/Desktop/Gagan git /storeSpark/StorySpark/android/app/.cxx/Debug/6z5fk4p5/x86_64/rnworklets_autolinked_build/CMakeFiles/react_codegen_rnworklets.dir/react/renderer/components/rnworklets/Props.cpp.o",
+			"path" : "/Users/tul/Desktop/Gagan git /storeSpark/StorySpark/android/app/.cxx/RelWithDebInfo/354j334h/x86_64/rnworklets_autolinked_build/CMakeFiles/react_codegen_rnworklets.dir/react/renderer/components/rnworklets/Props.cpp.o",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 4,
 			"isGenerated" : true,
-			"path" : "/Users/tul/Desktop/Gagan git /storeSpark/StorySpark/android/app/.cxx/Debug/6z5fk4p5/x86_64/rnworklets_autolinked_build/CMakeFiles/react_codegen_rnworklets.dir/react/renderer/components/rnworklets/ShadowNodes.cpp.o",
+			"path" : "/Users/tul/Desktop/Gagan git /storeSpark/StorySpark/android/app/.cxx/RelWithDebInfo/354j334h/x86_64/rnworklets_autolinked_build/CMakeFiles/react_codegen_rnworklets.dir/react/renderer/components/rnworklets/ShadowNodes.cpp.o",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 4,
 			"isGenerated" : true,
-			"path" : "/Users/tul/Desktop/Gagan git /storeSpark/StorySpark/android/app/.cxx/Debug/6z5fk4p5/x86_64/rnworklets_autolinked_build/CMakeFiles/react_codegen_rnworklets.dir/react/renderer/components/rnworklets/States.cpp.o",
+			"path" : "/Users/tul/Desktop/Gagan git /storeSpark/StorySpark/android/app/.cxx/RelWithDebInfo/354j334h/x86_64/rnworklets_autolinked_build/CMakeFiles/react_codegen_rnworklets.dir/react/renderer/components/rnworklets/States.cpp.o",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 4,
 			"isGenerated" : true,
-			"path" : "/Users/tul/Desktop/Gagan git /storeSpark/StorySpark/android/app/.cxx/Debug/6z5fk4p5/x86_64/rnworklets_autolinked_build/CMakeFiles/react_codegen_rnworklets.dir/rnworklets-generated.cpp.o",
+			"path" : "/Users/tul/Desktop/Gagan git /storeSpark/StorySpark/android/app/.cxx/RelWithDebInfo/354j334h/x86_64/rnworklets_autolinked_build/CMakeFiles/react_codegen_rnworklets.dir/rnworklets-generated.cpp.o",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 4,
 			"isGenerated" : true,
-			"path" : "/Users/tul/Desktop/Gagan git /storeSpark/StorySpark/android/app/.cxx/Debug/6z5fk4p5/x86_64/RNVectorIconsSpec_autolinked_build/CMakeFiles/react_codegen_RNVectorIconsSpec.dir/RNVectorIconsSpec-generated.cpp.o",
+			"path" : "/Users/tul/Desktop/Gagan git /storeSpark/StorySpark/android/app/.cxx/RelWithDebInfo/354j334h/x86_64/RNVectorIconsSpec_autolinked_build/CMakeFiles/react_codegen_RNVectorIconsSpec.dir/RNVectorIconsSpec-generated.cpp.o",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 4,
 			"isGenerated" : true,
-			"path" : "/Users/tul/Desktop/Gagan git /storeSpark/StorySpark/android/app/.cxx/Debug/6z5fk4p5/x86_64/RNVectorIconsSpec_autolinked_build/CMakeFiles/react_codegen_RNVectorIconsSpec.dir/react/renderer/components/RNVectorIconsSpec/ComponentDescriptors.cpp.o",
+			"path" : "/Users/tul/Desktop/Gagan git /storeSpark/StorySpark/android/app/.cxx/RelWithDebInfo/354j334h/x86_64/RNVectorIconsSpec_autolinked_build/CMakeFiles/react_codegen_RNVectorIconsSpec.dir/react/renderer/components/RNVectorIconsSpec/ComponentDescriptors.cpp.o",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 4,
 			"isGenerated" : true,
-			"path" : "/Users/tul/Desktop/Gagan git /storeSpark/StorySpark/android/app/.cxx/Debug/6z5fk4p5/x86_64/RNVectorIconsSpec_autolinked_build/CMakeFiles/react_codegen_RNVectorIconsSpec.dir/react/renderer/components/RNVectorIconsSpec/EventEmitters.cpp.o",
+			"path" : "/Users/tul/Desktop/Gagan git /storeSpark/StorySpark/android/app/.cxx/RelWithDebInfo/354j334h/x86_64/RNVectorIconsSpec_autolinked_build/CMakeFiles/react_codegen_RNVectorIconsSpec.dir/react/renderer/components/RNVectorIconsSpec/EventEmitters.cpp.o",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 4,
 			"isGenerated" : true,
-			"path" : "/Users/tul/Desktop/Gagan git /storeSpark/StorySpark/android/app/.cxx/Debug/6z5fk4p5/x86_64/RNVectorIconsSpec_autolinked_build/CMakeFiles/react_codegen_RNVectorIconsSpec.dir/react/renderer/components/RNVectorIconsSpec/Props.cpp.o",
+			"path" : "/Users/tul/Desktop/Gagan git /storeSpark/StorySpark/android/app/.cxx/RelWithDebInfo/354j334h/x86_64/RNVectorIconsSpec_autolinked_build/CMakeFiles/react_codegen_RNVectorIconsSpec.dir/react/renderer/components/RNVectorIconsSpec/Props.cpp.o",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 4,
 			"isGenerated" : true,
-			"path" : "/Users/tul/Desktop/Gagan git /storeSpark/StorySpark/android/app/.cxx/Debug/6z5fk4p5/x86_64/RNVectorIconsSpec_autolinked_build/CMakeFiles/react_codegen_RNVectorIconsSpec.dir/react/renderer/components/RNVectorIconsSpec/ShadowNodes.cpp.o",
+			"path" : "/Users/tul/Desktop/Gagan git /storeSpark/StorySpark/android/app/.cxx/RelWithDebInfo/354j334h/x86_64/RNVectorIconsSpec_autolinked_build/CMakeFiles/react_codegen_RNVectorIconsSpec.dir/react/renderer/components/RNVectorIconsSpec/ShadowNodes.cpp.o",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 4,
 			"isGenerated" : true,
-			"path" : "/Users/tul/Desktop/Gagan git /storeSpark/StorySpark/android/app/.cxx/Debug/6z5fk4p5/x86_64/RNVectorIconsSpec_autolinked_build/CMakeFiles/react_codegen_RNVectorIconsSpec.dir/react/renderer/components/RNVectorIconsSpec/States.cpp.o",
+			"path" : "/Users/tul/Desktop/Gagan git /storeSpark/StorySpark/android/app/.cxx/RelWithDebInfo/354j334h/x86_64/RNVectorIconsSpec_autolinked_build/CMakeFiles/react_codegen_RNVectorIconsSpec.dir/react/renderer/components/RNVectorIconsSpec/States.cpp.o",
 			"sourceGroupIndex" : 1
 		}
 	],
