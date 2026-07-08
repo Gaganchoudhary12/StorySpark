@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { StackScreenProps } from '@react-navigation/stack';
 import ScreenContainer from '../components/ScreenContainer';
@@ -19,15 +19,42 @@ const messages = [
 ];
 
 const GeneratingScreen = ({ route, navigation }: Props) => {
-  const { mood, relationship, theme } = route.params;
+  const { mood, relationship, theme: selectedTheme } = route.params;
   const mutation = useStoryMutation();
+  const hasStartedRef = useRef(false);
 
   useEffect(() => {
-    mutation.mutate({ mood, relationship, theme }, {
-      onSuccess: (data) => navigation.replace('Story', { story: data }),
-      onError: () => {}
+    if (hasStartedRef.current) {
+      return;
+    }
+
+    hasStartedRef.current = true;
+    console.log('[GeneratingScreen] Starting story generation with:', {
+      mood,
+      relationship,
+      theme: selectedTheme
     });
-  }, [mood, navigation, mutation, relationship, theme]);
+
+    mutation.mutate(
+      { mood, relationship, theme: selectedTheme },
+      {
+        onSuccess: (data) => {
+          console.log('[GeneratingScreen] Story generated successfully:', data);
+          navigation.replace('Story', { story: data });
+        },
+        onError: (error: Error) => {
+          console.error('[GeneratingScreen] Story generation failed:', error);
+        }
+      }
+    );
+  }, [mood, mutation, navigation, relationship, selectedTheme]);
+
+  console.log('[GeneratingScreen] Render - mutation state:', {
+    status: mutation.status,
+    isPending: mutation.isPending,
+    isError: mutation.isError,
+    isSuccess: mutation.isSuccess
+  });
 
   return (
     <ScreenContainer>
@@ -37,7 +64,22 @@ const GeneratingScreen = ({ route, navigation }: Props) => {
         {mutation.isError ? (
           <View style={styles.errorBox}>
             <Text style={styles.errorText}>We hit a snag while creating your story.</Text>
-            <Button title="Retry" onPress={() => mutation.mutate({ mood, relationship, theme })} />
+            <Text style={styles.errorText}>{mutation.error?.message || 'Unknown error'}</Text>
+            <Button title="Retry" onPress={() => {
+              console.log('[GeneratingScreen] Retrying story generation');
+              mutation.mutate(
+                { mood, relationship, theme: selectedTheme },
+                {
+                  onSuccess: (data) => {
+                    console.log('[GeneratingScreen] Story generated successfully:', data);
+                    navigation.replace('Story', { story: data });
+                  },
+                  onError: (error: Error) => {
+                    console.error('[GeneratingScreen] Story generation failed:', error);
+                  }
+                }
+              );
+            }} />
           </View>
         ) : null}
       </View>
