@@ -38,7 +38,7 @@ const QuestionScreen = ({ route, navigation }: Props) => {
     if (!data) return [];
     if (step === 'relationship') return data.relationships;
     if (step === 'theme') return data.themes;
-    if (step === 'language') return data.languages ?? ['English', 'Hindi'];
+    if (step === 'language') return data.languages;
     return data.moods;
   }, [optionsQuery.data, step]);
 
