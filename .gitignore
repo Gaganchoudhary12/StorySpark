@@ -1,10 +1,89 @@
+# React Native
 node_modules/
-.gradle/
+.pnp
+.pnp.js
+
+# Testing
+coverage/
+*.lcov
+
+# Production
+build/
+dist/
+
+# Misc
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.orig.*
+web-build/
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+*.sublime-project
+*.sublime-workspace
+.DS_Store
+
+# Android
 android/app/build/
+android/app/.gradle/
+android/app/local.properties
+android/.gradle/
+android/local.properties
 android/build/
+.android/
+android/.settings/
+android/captures/
+android/gradlew
+android/gradlew.bat
+android/gradle.properties
+*.apk
+*.aab
+
+# iOS
 ios/Pods/
 ios/build/
-*.log
-.env
-.DS_Store
-coverage/
+ios/.xcworkspace/
+ios/DerivedData/
+ios/*.xcworkspace
+ios/*.xcodeproj/xcuserdata/
+ios/xcuserdata/
+Pods/
+
+# Metro Bundler
+.metro-health-check*
+
+# Typescript
+*.tsbuildinfo
+
+# Yarn
+yarn-error.log
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+.pnp.cjs
