@@ -1,0 +1,70 @@
+import React, { useEffect } from 'react';
+import { StyleSheet, Text, View } from 'react-native';
+import { StackScreenProps } from '@react-navigation/stack';
+import ScreenContainer from '../components/ScreenContainer';
+import LoadingAnimation from '../components/LoadingAnimation';
+import Button from '../components/Button';
+import { useStoryMutation } from '../hooks/useStoryMutation';
+import { theme } from '../theme';
+import { RootStackParamList } from '../types/navigation';
+
+type Props = StackScreenProps<RootStackParamList, 'Generating'>;
+
+const messages = [
+  'Creating your characters...',
+  'Building your world...',
+  'Writing conversations...',
+  'Adding plot twists...',
+  'Almost done...'
+];
+
+const GeneratingScreen = ({ route, navigation }: Props) => {
+  const { mood, relationship, theme } = route.params;
+  const mutation = useStoryMutation();
+
+  useEffect(() => {
+    mutation.mutate({ mood, relationship, theme }, {
+      onSuccess: (data) => navigation.replace('Story', { story: data }),
+      onError: () => {}
+    });
+  }, [mood, navigation, mutation, relationship, theme]);
+
+  return (
+    <ScreenContainer>
+      <View style={styles.centered}>
+        <Text style={styles.title}>Crafting your story</Text>
+        <LoadingAnimation messages={messages} />
+        {mutation.isError ? (
+          <View style={styles.errorBox}>
+            <Text style={styles.errorText}>We hit a snag while creating your story.</Text>
+            <Button title="Retry" onPress={() => mutation.mutate({ mood, relationship, theme })} />
+          </View>
+        ) : null}
+      </View>
+    </ScreenContainer>
+  );
+};
+
+const styles = StyleSheet.create({
+  centered: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  title: {
+    color: theme.colors.text,
+    fontSize: 24,
+    fontWeight: '700',
+    marginBottom: 16
+  },
+  errorBox: {
+    marginTop: 24,
+    alignItems: 'center'
+  },
+  errorText: {
+    color: theme.colors.danger,
+    marginBottom: 12
+  }
+});
+
+export default GeneratingScreen;
