@@ -33,7 +33,7 @@ const HomeScreen = ({ navigation }: Props) => {
               })
             }
           />
-          <Text style={styles.note}>English and Hindi supported.</Text>
+          {/* <Text style={styles.note}>English and Hindi supported.</Text> */}
         </View>
       </View>
     </ScreenContainer>

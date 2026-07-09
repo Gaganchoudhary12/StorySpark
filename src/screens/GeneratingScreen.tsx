@@ -29,18 +29,10 @@ const GeneratingScreen = ({ route, navigation }: Props) => {
     }
 
     hasStartedRef.current = true;
-    console.log('[GeneratingScreen] Starting story generation with:', {
-      mood,
-      relationship,
-      theme: selectedTheme,
-      language
-    });
-
     mutation.mutate(
       { mood, relationship, theme: selectedTheme, language },
       {
         onSuccess: (data) => {
-          console.log('[GeneratingScreen] Story generated successfully:', data);
           navigation.replace('Story', { story: data });
         },
         onError: (error: Error) => {
@@ -49,13 +41,6 @@ const GeneratingScreen = ({ route, navigation }: Props) => {
       }
     );
   }, [language, mood, mutation, navigation, relationship, selectedTheme]);
-
-  console.log('[GeneratingScreen] Render - mutation state:', {
-    status: mutation.status,
-    isPending: mutation.isPending,
-    isError: mutation.isError,
-    isSuccess: mutation.isSuccess
-  });
 
   return (
     <ScreenContainer>
@@ -67,12 +52,10 @@ const GeneratingScreen = ({ route, navigation }: Props) => {
             <Text style={styles.errorText}>We hit a snag while creating your story.</Text>
             <Text style={styles.errorText}>{mutation.error?.message || 'Unknown error'}</Text>
             <Button title="Retry" onPress={() => {
-              console.log('[GeneratingScreen] Retrying story generation');
               mutation.mutate(
                 { mood, relationship, theme: selectedTheme, language },
                 {
                   onSuccess: (data) => {
-                    console.log('[GeneratingScreen] Story generated successfully:', data);
                     navigation.replace('Story', { story: data });
                   },
                   onError: (error: Error) => {

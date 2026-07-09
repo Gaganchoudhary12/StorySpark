@@ -2,7 +2,6 @@ import { API_BASE_URL } from '@env';
 import axios, { AxiosError } from 'axios';
 
 const baseURL = __DEV__ ? 'http://10.0.2.2:5001' : API_BASE_URL || 'http://10.0.2.2:5001';
-console.log(__DEV__,'[API] Initializing with baseURL:', baseURL);
 
 const api = axios.create({
   baseURL,
@@ -19,7 +18,6 @@ export interface StoryOptionsResponse {
 // Add request interceptor
 api.interceptors.request.use(
   (config) => {
-    console.log('[API] Request:', config.method?.toUpperCase(), config.url, 'Data:', config.data);
     return config;
   },
   (error) => {
@@ -31,7 +29,6 @@ api.interceptors.request.use(
 // Add response interceptor
 api.interceptors.response.use(
   (response) => {
-    console.log('[API] Response:', response.status, response.statusText, 'Data:', response.data);
     return response;
   },
   (error) => {
@@ -70,9 +67,7 @@ export const storyService = {
   },
   generateStory: async (payload: { mood: string; relationship: string; theme: string; language: string }) => {
     try {
-      console.log('[StoryService] Generating story with payload:', payload);
       const response = await api.post('/api/story', payload);
-      console.log('[StoryService] Story generated successfully');
       return response.data;
     } catch (error) {
       console.error('[StoryService] Error generating story:', error);
